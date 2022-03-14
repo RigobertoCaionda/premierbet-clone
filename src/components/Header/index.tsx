@@ -1,4 +1,5 @@
 import { HeaderArea, Header1, Header2 } from "./styled";
+import MenuLink from "../MenuLink";
 const Page: React.FC = () => {
   return (
     <HeaderArea>
@@ -36,6 +37,8 @@ const Page: React.FC = () => {
               <input type="password" placeholder="Palavra-passe" />
               <div
                 className="locker"
+                data-tip="Esqueci-me da palavra-passe"
+                data-for="tip-top"
                 style={{
                   backgroundColor: "#fae100",
                   width: 10,
@@ -55,7 +58,40 @@ const Page: React.FC = () => {
           </form>
         </div>
       </Header1>
-      <Header2>Cabeca2</Header2>
+      <Header2>
+        <ul>
+          <li>
+            <MenuLink link="/" text="DESPORTOS" />
+          </li>
+          <li>
+            <MenuLink link="/live-betting" text="AO VIVO" />
+          </li>
+          <li>
+            <MenuLink link="/vegas" text="VEGAS" />
+          </li>
+          <li>
+            <MenuLink link="/boosts" text="BOOSTS" />
+          </li>
+          <li>
+            <MenuLink link="/superg" text="SUPERG" />
+          </li>
+          <li>
+            <MenuLink link="/jackpots" text="JACKPOTS" />
+          </li>
+          <li>
+            <MenuLink link="/virtuals" text="VIRTUAIS" />
+          </li>
+          <li>
+            <MenuLink link="/promotions" text="PROMOÇÕES" />
+          </li>
+          <li>
+            <MenuLink link="/community" text="COMUNIDADE" />
+          </li>
+          <li>
+            <MenuLink link="/faq" text="FAQ" />
+          </li>
+        </ul>
+      </Header2>
     </HeaderArea>
   );
 };

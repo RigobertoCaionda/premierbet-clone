@@ -48,7 +48,7 @@ export const Header1 = styled.div`
                 color: #fff;
                 cursor: pointer;
                 option {
-                    background-color: #000;
+                    background-color: #006039;
                 }
             }
         }
@@ -110,4 +110,11 @@ export const Header1 = styled.div`
         }
     }
 `;
-export const Header2 = styled.div``;
+export const Header2 = styled.div`
+    padding: 0px 50px;
+    height: 50px;
+    ul {
+        display: flex;
+        list-style: none;
+    }
+`;
