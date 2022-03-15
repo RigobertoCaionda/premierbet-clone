@@ -67,7 +67,7 @@ export const Header1 = styled.div`
                 align-items: center;
                 margin-left: 14px;
                 button {
-                    padding: 8px 10px;
+                    padding: 8px;
                     font-size: 0.7rem;
                     cursor: pointer;
                     background-color: #fae100;

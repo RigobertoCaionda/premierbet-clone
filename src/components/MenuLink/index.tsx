@@ -15,7 +15,12 @@ const Page: React.FC<Props> = ({ link, text }) => {
     navigate(link);
   };
   return (
-    <LinkArea href={link} onClick={handleClick} active={isActive}>
+    <LinkArea
+      href={link}
+      onClick={handleClick}
+      active={isActive}
+      className={text === "VEGAS" ? "vegas" : ""}
+    >
       {text}
     </LinkArea>
   );

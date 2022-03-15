@@ -14,6 +14,9 @@ export const LinkArea = styled.a<Props>`
     text-decoration: none;
     font-size: 0.8rem;
     transition: background-color ease-in 0.3s;
+    &.vegas {
+        background-color: #AD3DD2;
+    }
     &: hover {
         background-color: #fae100;
         color: #333333;
