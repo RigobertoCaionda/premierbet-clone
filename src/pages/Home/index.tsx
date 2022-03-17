@@ -1,4 +1,5 @@
-import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
+import { Link } from "react-router-dom";
+import SwiperCore, { EffectCoverflow, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
@@ -12,6 +13,17 @@ const slide_img = [
   "/assets/slide3.jpg",
   "/assets/slide4.jpg",
   "/assets/slide5.jpg",
+];
+const championship = [
+  { img: "/assets/bfica.gif", title: "PRIMEIRA LIGA" },
+  { img: "/assets/bfica.gif", title: "EPL" },
+  { img: "/assets/bfica.gif", title: "LIGUE 1" },
+  { img: "/assets/bfica.gif", title: "LA LIGA" },
+  { img: "/assets/bfica.gif", title: "SERIE A" },
+  { img: "/assets/bfica.gif", title: "BUNDESLIGA" },
+  { img: "/assets/bfica.gif", title: "UEFA CL" },
+  { img: "/assets/bfica.gif", title: "FANTASY FUTEBOL" },
+  { img: "/assets/bfica.gif", title: "BENFICA ESPECIAIS" },
 ];
 const Page = () => {
   return (
@@ -43,9 +55,28 @@ const Page = () => {
       </C.SliderArea>
 
       <C.MainArea>
-        <C.LeftSideContent>LeftSide</C.LeftSideContent>
-        <C.MainContent>MainSide</C.MainContent>
-        <C.RightSideContent>RightSide</C.RightSideContent>
+        <C.LeftSideContent>
+          <C.Header>
+            <div className="to-bet">A APOSTAR</div>
+            <div className="live-bet">
+              <Link to="live-bet">APOSTAS AO VIVO</Link>
+            </div>
+            <div className="go-back">B</div>
+          </C.Header>
+        </C.LeftSideContent>
+        <C.MainContent>
+          <C.Header>
+            {championship.map((item, key) => (
+              <div className="championship" key={key}>
+                <Link to="">
+                  <img src={item.img} />
+                  <span>{item.title}</span>
+                </Link>
+              </div>
+            ))}
+          </C.Header>
+        </C.MainContent>
+        <C.RightSideContent>RightSide RightSide RightSide</C.RightSideContent>
       </C.MainArea>
     </C.HomeArea>
   );
