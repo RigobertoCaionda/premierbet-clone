@@ -1,10 +1,12 @@
+import { BaseSyntheticEvent, useState } from "react";
 import { Link } from "react-router-dom";
-import SwiperCore, { EffectCoverflow, Pagination, Autoplay } from "swiper";
+import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 
 import * as C from "./styled";
+import Championship from "../../components/Championship";
 
 SwiperCore.use([EffectCoverflow, Pagination]);
 const slide_img = [
@@ -15,17 +17,29 @@ const slide_img = [
   "/assets/slide5.jpg",
 ];
 const championship = [
-  { img: "/assets/bfica.gif", title: "PRIMEIRA LIGA" },
-  { img: "/assets/bfica.gif", title: "EPL" },
-  { img: "/assets/bfica.gif", title: "LIGUE 1" },
-  { img: "/assets/bfica.gif", title: "LA LIGA" },
-  { img: "/assets/bfica.gif", title: "SERIE A" },
-  { img: "/assets/bfica.gif", title: "BUNDESLIGA" },
-  { img: "/assets/bfica.gif", title: "UEFA CL" },
-  { img: "/assets/bfica.gif", title: "FANTASY FUTEBOL" },
-  { img: "/assets/bfica.gif", title: "BENFICA ESPECIAIS" },
+  { img: "/assets/bfica.gif", title: "PRIMEIRA LIGA", link: "/first-league" },
+  { img: "/assets/bfica.gif", title: "EPL", link: "/epl" },
+  { img: "/assets/bfica.gif", title: "LIGUE 1", link: "/ligue1" },
+  { img: "/assets/bfica.gif", title: "LA LIGA", link: "/laliga" },
+  { img: "/assets/bfica.gif", title: "SERIE A", link: "/seriea" },
+  { img: "/assets/bfica.gif", title: "BUNDESLIGA", link: "/bundesliga" },
+  { img: "/assets/bfica.gif", title: "UEFA CL", link: "/uefacl" },
+  { img: "/assets/bfica.gif", title: "FANTASY FUTEBOL", link: "/fantasy" },
+  { img: "/assets/bfica.gif", title: "BENFICA ESPECIAIS", link: "/benfica" },
 ];
 const Page = () => {
+  const [toBet, setToBet] = useState(true);
+  const [liveBet, setLiveBet] = useState(false);
+
+  const handleToBetClick = () => {
+    setToBet(true);
+    setLiveBet(false);
+  };
+
+  const handleLiveBetClick = () => {
+    setLiveBet(true);
+    setToBet(false);
+  };
   return (
     <C.HomeArea>
       <C.SliderArea>
@@ -56,27 +70,50 @@ const Page = () => {
 
       <C.MainArea>
         <C.LeftSideContent>
-          <C.Header>
-            <div className="to-bet">A APOSTAR</div>
-            <div className="live-bet">
-              <Link to="live-bet">APOSTAS AO VIVO</Link>
-            </div>
-            <div className="go-back">B</div>
-          </C.Header>
+          <div>
+            <button
+              className={toBet ? "to-bet" : ""}
+              onClick={handleToBetClick}
+            >
+              A APOSTAR
+            </button>
+            <button
+              className={liveBet ? "to-bet" : ""}
+              onClick={handleLiveBetClick}
+            >
+              APOSTAS AO VIVO
+            </button>
+            <button>B</button>
+          </div>
+
+          <div className="search-input-area">
+            <input type="text" placeholder="PROCURAR" />
+            <div
+              style={{
+                width: 15,
+                height: 15,
+                backgroundColor: "#f00",
+                marginLeft: -25,
+              }}
+            ></div>
+          </div>
         </C.LeftSideContent>
         <C.MainContent>
-          <C.Header>
+          <div className="champions">
             {championship.map((item, key) => (
-              <div className="championship" key={key}>
-                <Link to="">
-                  <img src={item.img} />
-                  <span>{item.title}</span>
-                </Link>
-              </div>
+              <Championship item={item} key={key} />
             ))}
-          </C.Header>
+          </div>
+          <div className="highlights">DESTAQUES</div>
         </C.MainContent>
-        <C.RightSideContent>RightSide RightSide RightSide</C.RightSideContent>
+        <C.RightSideContent>
+          <h5>BOLETIM DE APOSTAS</h5>
+          <div className="top2">
+            <div>UNICO</div>
+            <div>BÓNUS</div>
+            <div className="my-bet">MINHAS APOSTAS</div>
+          </div>
+        </C.RightSideContent>
       </C.MainArea>
     </C.HomeArea>
   );

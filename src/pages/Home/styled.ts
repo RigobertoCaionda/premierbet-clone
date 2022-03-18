@@ -8,64 +8,84 @@ export const SliderArea = styled.div`
     background-color: #dddddd;
 `;
 export const MainArea = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-gap: 5px;
     background-color: #dddddd;
     padding: 3px 5px;
 `;
 
 export const LeftSideContent = styled.aside`
-    margin-right: 5px;
-`;
-export const RightSideContent = styled.aside`
-background-color: #009A3F;
-`;
-export const MainContent = styled.main`
-    flex: 1;
-    margin-right: 5px;
-`;
-export const Header = styled.div`
-    display: flex;
-    .to-bet, .live-bet, .go-back {
-        margin-right: 1.5px;
-        background-color: #fff;
-        font-size: 0.77rem;
-        padding: 10px;
-        cursor: pointer;
-        transition: all ease-in 0.1s;
-        &: hover {
+
+    .search-input-area {
+        display: flex;
+        align-items: center;
+        margin-top: 3px;
+
+        input {
+            width: 100%;
+            padding: 9px 10px;
+            font-size: 0.74rem;
+            background-color: #FFF;
+            border: 0;
+            outline: 0;
+        }
+    }
+    .to-bet {
+        background-color: #111111;
+        color: #fff;
+    }
+
+   button {
+       padding: 10px 8px;
+       font-size: 0.73rem;
+       border: 0;
+       background-color: #fff;
+       margin-right: 1px;
+       cursor: pointer;
+       transition: all ease-in 0.1s;
+       &: hover {
             background-color: #111111;
             color: #fff;
-        }
-    }
-    .live-bet {
-        &: hover {
-            color: #fff;
-            a {
-                color: #fff;
-            }
-        }
-       a {
-            color: #1b1b1b;
-            font-size: 0.77rem;
-            text-decoration: none;
        }
+   }
+`;
+export const RightSideContent = styled.aside`
+    background-color: #009A3F;
+    h5 {
+        color: #fff;
+        margin: 10px 0 10px 10px;
     }
-    .championship {
-        font-size: 0.75rem;
-        a {
-            text-decoration: none;
-            background-color: #f8f8f8;
-            display: flex;
-            padding: 7px 5px;
-            color: #1b1b1b;
-            margin-right: 1px;
+    .top2 {
+        display: flex;
+        div.my-bet {
+            padding: 3px 10px;
+        }
+        div {
+            background-color: #014A21;
+            padding: 10px;
+            font-size: 0.75rem;
+            border-right: 1px solid #003C1A;
+            cursor: pointer;
+            text-align: center;
+            color: #fff;
+            transition: all ease-in 0.3s;
+
             &: hover {
-                background-color: #EFEFEF;
-            }
-            img {
-                width: 20px;
+                background-color: #111111;
             }
         }
-        
     }
+`;
+export const MainContent = styled.main`
+   display: flex;
+  flex-direction: column;
+
+  .highlights {
+      margin-top: 3px;
+      background-color: #009A3F;
+      padding: 10px;
+      color: #fff;
+      font-size: 0.8rem;
+  }
 `;
