@@ -10,6 +10,11 @@ export const LinkArea = styled.a`
     padding: 0px 10px;
     text-decoration: none;
     color: #333333;
+    transition: all ease-in 0.1s;
+    &: hover {
+        background-color: #111111;
+        color: #fff;
+    }
     span {
         font-size: 0.77rem;
     }

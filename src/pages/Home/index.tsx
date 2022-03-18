@@ -18,14 +18,14 @@ const slide_img = [
   "/assets/slide5.jpg",
 ];
 const championship = [
-  { img: "/assets/bfica.gif", title: "PRIMEIRA LIGA", link: "/first-league" },
-  { img: "/assets/bfica.gif", title: "EPL", link: "/epl" },
-  { img: "/assets/bfica.gif", title: "LIGUE 1", link: "/ligue1" },
-  { img: "/assets/bfica.gif", title: "LA LIGA", link: "/laliga" },
-  { img: "/assets/bfica.gif", title: "SERIE A", link: "/seriea" },
-  { img: "/assets/bfica.gif", title: "BUNDESLIGA", link: "/bundesliga" },
-  { img: "/assets/bfica.gif", title: "UEFA CL", link: "/uefacl" },
-  { img: "/assets/bfica.gif", title: "FANTASY FUTEBOL", link: "/fantasy" },
+  { img: "/assets/img1.png", title: "PRIMEIRA LIGA", link: "/first-league" },
+  { img: "/assets/img2.png", title: "EPL", link: "/epl" },
+  { img: "/assets/img3.png", title: "LIGUE 1", link: "/ligue1" },
+  { img: "/assets/img4.png", title: "LA LIGA", link: "/laliga" },
+  { img: "/assets/img5.png", title: "SERIE A", link: "/seriea" },
+  { img: "/assets/img6.png", title: "BUNDESLIGA", link: "/bundesliga" },
+  { img: "/assets/img7.jpg", title: "UEFA CL", link: "/uefacl" },
+  { img: "/assets/img7.jpg", title: "FANTASY FUTEBOL", link: "/fantasy" },
   { img: "/assets/bfica.gif", title: "BENFICA ESPECIAIS", link: "/benfica" },
 ];
 
@@ -72,6 +72,53 @@ const sports = [
     link: "/league-of-legends",
   },
   { img: "/assets/bfica.gif", title: "BOXE", qt: 10, link: "/boxe" },
+  { img: "/assets/bfica.gif", title: "DARDOS", qt: 10, link: "/dardos" },
+  { img: "/assets/bfica.gif", title: "RUGBY", qt: 10, link: "/rugby" },
+  {
+    img: "/assets/bfica.gif",
+    title: "FUTEBOL AMERICANO",
+    qt: 10,
+    link: "/american-football",
+  },
+  {
+    img: "/assets/bfica.gif",
+    title: "FUTEBOL AUSTRALIANO",
+    qt: 10,
+    link: "/australian",
+  },
+  { img: "/assets/bfica.gif", title: "FUTSAL", qt: 10, link: "/futsal" },
+  { img: "/assets/bfica.gif", title: "FORMULA 1", qt: 10, link: "/formula" },
+  {
+    img: "/assets/bfica.gif",
+    title: "HOQUEI NO GELO",
+    qt: 10,
+    link: "/hoquei",
+  },
+  { img: "/assets/bfica.gif", title: "VOLEIBOL", qt: 10, link: "/voleibol" },
+  {
+    img: "/assets/bfica.gif",
+    title: "VOLEIBOL DE PRAIA",
+    qt: 45,
+    link: "/voleibol-praia",
+  },
+  { img: "/assets/bfica.gif", title: "MMA", qt: 23, link: "/mma" },
+  { img: "/assets/bfica.gif", title: "SNOOKER", qt: 76, link: "/snooker" },
+  { img: "/assets/bfica.gif", title: "POLO AQUÁTICO", qt: 10, link: "/polo" },
+  {
+    img: "/assets/bfica.gif",
+    title: "TÉNIS DE MESA",
+    qt: 9,
+    link: "/table'tenis",
+  },
+  { img: "/assets/bfica.gif", title: "BADMINTON", qt: 4, link: "/badminton" },
+  { img: "/assets/bfica.gif", title: "EFUTEBOL", qt: 7, link: "/efutebol" },
+  {
+    img: "/assets/bfica.gif",
+    title: "FUTEBOL GAÉLICO",
+    qt: 5,
+    link: "/futebol-gaelico",
+  },
+  { img: "/assets/bfica.gif", title: "HURLING", qt: 10, link: "/hurling" },
 ];
 const Page = () => {
   const [toBet, setToBet] = useState(true);
