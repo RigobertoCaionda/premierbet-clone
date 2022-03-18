@@ -15,6 +15,7 @@ export const FooterArea = styled.footer`
        line-height: 30px;
        font-size: 1.2rem;
        cursor: pointer;
+       background-color: #262735;
    }
 `;
 export const Footer1 = styled.div`

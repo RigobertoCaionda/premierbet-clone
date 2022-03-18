@@ -17,6 +17,34 @@ export const MainArea = styled.div`
 
 export const LeftSideContent = styled.aside`
 
+    .sport {
+        display: flex;
+        flex-direction: column;
+    }
+    .date-picker {
+        padding: 10px;
+        background-color: #fff;
+        margin-top: 3px;
+        cursor: pointer;
+        .range {
+            margin-top: 17px;
+           
+            input {
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+        .first-div {
+            span {
+                font-size: 0.58em;
+                margin-right: 10px;
+                color: #393939;
+            }
+            span.diff-span {
+                color: #009A3F;
+            }
+        }
+    }
     .search-input-area {
         display: flex;
         align-items: center;
@@ -51,10 +79,12 @@ export const LeftSideContent = styled.aside`
    }
 `;
 export const RightSideContent = styled.aside`
-    background-color: #009A3F;
-    h5 {
-        color: #fff;
-        margin: 10px 0 10px 10px;
+    .title {
+        background-color: #009A3F;
+        padding: 10px 0 10px 10px;
+        h5 {
+            color: #fff;
+        }
     }
     .top2 {
         display: flex;

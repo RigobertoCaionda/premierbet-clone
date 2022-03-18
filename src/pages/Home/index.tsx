@@ -7,6 +7,7 @@ import "swiper/swiper.min.css";
 
 import * as C from "./styled";
 import Championship from "../../components/Championship";
+import Sport from "../../components/Sport";
 
 SwiperCore.use([EffectCoverflow, Pagination]);
 const slide_img = [
@@ -27,9 +28,55 @@ const championship = [
   { img: "/assets/bfica.gif", title: "FANTASY FUTEBOL", link: "/fantasy" },
   { img: "/assets/bfica.gif", title: "BENFICA ESPECIAIS", link: "/benfica" },
 ];
+
+const sports = [
+  {
+    img: "/assets/bfica.gif",
+    title: "CASH BACK BOOSTS",
+    qt: 2,
+    link: "/cash-back",
+  },
+  {
+    img: "/assets/bfica.gif",
+    title: " OODS BOOSTS",
+    qt: 80,
+    link: "/odds-boosts",
+  },
+  { img: "/assets/bfica.gif", title: "FUTEBOL", qt: 1087, link: "/football" },
+  {
+    img: "/assets/bfica.gif",
+    title: "CASH BACK BOOSTS",
+    qt: 2,
+    link: "/cash-back",
+  },
+  {
+    img: "/assets/bfica.gif",
+    title: "FANTASY FUTEBOL",
+    qt: 22,
+    link: "/fantasy",
+  },
+  {
+    img: "/assets/bfica.gif",
+    title: "BASQUETEBOL",
+    qt: 25,
+    link: "/basketball",
+  },
+  { img: "/assets/bfica.gif", title: "TÉNIS", qt: 184, link: "/tenis" },
+  { img: "/assets/bfica.gif", title: "BASEBOL", qt: 7, link: "/baseball" },
+  { img: "/assets/bfica.gif", title: "CRICKET", qt: 6, link: "/cricket" },
+  { img: "/assets/bfica.gif", title: "ANDEBOL", qt: 23, link: "/handball" },
+  {
+    img: "/assets/bfica.gif",
+    title: "LEAGUE OF LEGENDS",
+    qt: 1,
+    link: "/league-of-legends",
+  },
+  { img: "/assets/bfica.gif", title: "BOXE", qt: 10, link: "/boxe" },
+];
 const Page = () => {
   const [toBet, setToBet] = useState(true);
   const [liveBet, setLiveBet] = useState(false);
+  const [rangeInput, setRangeInput] = useState(97);
 
   const handleToBetClick = () => {
     setToBet(true);
@@ -97,6 +144,27 @@ const Page = () => {
               }}
             ></div>
           </div>
+
+          <div className="date-picker">
+            <div className="first-div">
+              <span>HOJE 24 HO...</span>
+              <span>3 DIAS</span>
+              <span>SEMA...</span>
+              <span className="diff-span">TOD...</span>
+            </div>
+            <div className="range">
+              <input
+                type="range"
+                value={rangeInput}
+                onChange={(e) => setRangeInput(parseInt(e.target.value))}
+              />
+            </div>
+          </div>
+          <div className="sport">
+            {sports.map((item, key) => (
+              <Sport key={key} item={item} />
+            ))}
+          </div>
         </C.LeftSideContent>
         <C.MainContent>
           <div className="champions">
@@ -107,7 +175,9 @@ const Page = () => {
           <div className="highlights">DESTAQUES</div>
         </C.MainContent>
         <C.RightSideContent>
-          <h5>BOLETIM DE APOSTAS</h5>
+          <div className="title">
+            <h5>BOLETIM DE APOSTAS</h5>
+          </div>
           <div className="top2">
             <div>UNICO</div>
             <div>BÓNUS</div>

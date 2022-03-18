@@ -15,8 +15,7 @@ const Page: React.FC = () => {
   const [showScroller, setShowScroller] = useState(false);
   setInterval(() => {
     let res = clock();
-    let [hour, _] = res.split(":");
-    setShowTime(parseInt(hour) < 13 ? `${res} AM` : `${res} PM`);
+    setShowTime(res);
   }, 1000);
 
   window.onscroll = () => {
@@ -61,7 +60,7 @@ const Page: React.FC = () => {
                       marginRight: 5,
                     }}
                   ></div>
-                  <span>{showTime}</span>
+                  <span>{showTime.time}</span>
                 </div>
                 <div className="select">
                   <select>
