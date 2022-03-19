@@ -6,7 +6,8 @@ export const ChampionshipArea = styled.a`
     color: #333333;
     background-color: #f8f8f8;
     padding: 5px 6px;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     transition: all ease-in 0.1s;
     span {
         font-size: 0.75rem;

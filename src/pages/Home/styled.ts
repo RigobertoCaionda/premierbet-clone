@@ -79,6 +79,34 @@ export const LeftSideContent = styled.aside`
    }
 `;
 export const RightSideContent = styled.aside`
+   .cart {
+       .empty-cart {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           padding: 40px 15px;
+           background-color: #f7f7f7;
+           .boletim {
+               font-size: 0.8rem;
+               color: #6f6f6f;
+               margin-bottom: 10px;
+               font-weight: bold;
+           }
+           .select-odd {
+               font-size: 0.75rem;
+               color: #6f6f6f;
+               text-align: center;
+           }
+           .ball {
+               width: 100px;
+               height: 100px;
+               border-radius: 50%;
+               background-color: #989898;
+               margin-bottom: 10px;
+           }
+       }
+   }
     .title {
         background-color: #009A3F;
         padding: 10px 0 10px 10px;
@@ -117,5 +145,18 @@ export const MainContent = styled.main`
       padding: 10px;
       color: #fff;
       font-size: 0.8rem;
+  }
+`;
+
+export const SportsSlider = styled.div`
+  background-color: #fff;
+  padding: 10px;
+  .sport-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.75rem;
+    color: #333333;
+    transition: all ease-in 0.2s;
   }
 `;

@@ -10,6 +10,14 @@ import Championship from "../../components/Championship";
 import Sport from "../../components/Sport";
 
 SwiperCore.use([EffectCoverflow, Pagination]);
+
+const shighlightedSports = [
+  { title: "FUTEBOL", img: "/assets/img7.jpg", link: "/futeball" },
+  { title: "BASQUETEBOL", img: "/assets/img7.jpg", link: "/basketball" },
+  { title: "RUGBY", img: "/assets/img7.jpg", link: "/rugby" },
+  { title: "HOQUEI NO GELO", img: "/assets/img7.jpg", link: "/hoquei-gelo" },
+  { title: "VOLEIBOL", img: "/assets/img7.jpg", link: "/voleibol" },
+];
 const slide_img = [
   "/assets/slide1.jpg",
   "/assets/slide2.jpg",
@@ -220,6 +228,41 @@ const Page = () => {
             ))}
           </div>
           <div className="highlights">DESTAQUES</div>
+          <C.SportsSlider>
+            <Swiper
+              effect={"coverflow"}
+              grabCursor={false}
+              centeredSlides={false}
+              slidesPerView={5}
+              navigation={true}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+              }}
+              pagination={true}
+              className="mySwiper"
+            >
+              {shighlightedSports.map((img, i) => {
+                return (
+                  <SwiperSlide key={i}>
+                    <Link to={img.link} className="sport-link">
+                      <img
+                        src={img.img}
+                        alt=""
+                        width="20"
+                        height="20"
+                        style={{ marginRight: 10 }}
+                      />{" "}
+                      <span>{img.title}</span>
+                    </Link>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </C.SportsSlider>
         </C.MainContent>
         <C.RightSideContent>
           <div className="title">
@@ -229,6 +272,15 @@ const Page = () => {
             <div>UNICO</div>
             <div>BÓNUS</div>
             <div className="my-bet">MINHAS APOSTAS</div>
+          </div>
+          <div className="cart">
+            <div className="empty-cart">
+              <div className="ball"></div>
+              <div className="boletim">Boletim vazio.</div>
+              <div className="select-odd">
+                Selecionar uma odd para começar a apostar!
+              </div>
+            </div>
           </div>
         </C.RightSideContent>
       </C.MainArea>
