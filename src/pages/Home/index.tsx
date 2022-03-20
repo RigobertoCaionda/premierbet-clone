@@ -8,6 +8,7 @@ import "swiper/swiper.min.css";
 import * as C from "./styled";
 import Championship from "../../components/Championship";
 import Sport from "../../components/Sport";
+import GameChunk from "../../components/GameChunk";
 
 SwiperCore.use([EffectCoverflow, Pagination]);
 
@@ -263,6 +264,44 @@ const Page = () => {
               })}
             </Swiper>
           </C.SportsSlider>
+
+          <div className="details-area">
+            <div className="top">
+              <span>3 WAY</span>
+              <select>
+                <option>MAIS/MENOS</option>
+                <option>Indefinido</option>
+                <option>Indefindo</option>
+              </select>
+            </div>
+            <div className="bottom">
+              <div className="time-and-event">
+                <span>TEMPO</span>
+                <span>EVENTO</span>
+              </div>
+              <div className="specials">
+                <span className="special-span">1</span>
+                <span className="special-span">X</span>
+                <span className="special-span">2</span>
+                <span className="special-span">GOLOS</span>
+                <span className="special-span">ACIMA</span>
+                <span className="special-span">UNDER</span>
+                <span className="special-span">MAIS</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <GameChunk />
+            <GameChunk bgColor={"#f8f8f8"} />
+            <GameChunk />
+            <GameChunk bgColor={"#f8f8f8"} />
+            <GameChunk />
+            <GameChunk bgColor={"#f8f8f8"} />
+            <GameChunk />
+            <GameChunk bgColor={"#f8f8f8"} />
+            <GameChunk />
+            <GameChunk bgColor={"#f8f8f8"} />
+          </div>
         </C.MainContent>
         <C.RightSideContent>
           <div className="title">
