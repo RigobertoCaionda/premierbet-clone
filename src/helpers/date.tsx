@@ -23,7 +23,7 @@ export const clock = () => {
     let element = PMHours.find((item) => item.i === hour);
     if (element) hour = element.j;
   } else {
-    ampm: "AM";
+    ampm = "AM";
   }
   let time = `${hour < 10 ? `0${hour}` : hour}:${
     minute < 10 ? `0${minute}` : minute
