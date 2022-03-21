@@ -1,6 +1,11 @@
 import { BaseSyntheticEvent, useState } from "react";
 import { Link } from "react-router-dom";
-import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
+import SwiperCore, {
+  EffectCoverflow,
+  Pagination,
+  Autoplay,
+  Navigation,
+} from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
@@ -9,8 +14,10 @@ import * as C from "./styled";
 import Championship from "../../components/Championship";
 import Sport from "../../components/Sport";
 import GameChunk from "../../components/GameChunk";
+import SportSlider from "../../components/SportSlider";
+import GamesHeader from "../../components/GamesHeader";
 
-SwiperCore.use([EffectCoverflow, Pagination]);
+SwiperCore.use([EffectCoverflow, Pagination, Autoplay, Navigation]);
 
 const shighlightedSports = [
   { title: "FUTEBOL", img: "/assets/img7.jpg", link: "/futeball" },
@@ -147,6 +154,10 @@ const Page = () => {
     <C.HomeArea>
       <C.SliderArea>
         <Swiper
+          autoplay={{
+            delay: 2000,
+          }}
+          navigation={true}
           effect={"coverflow"}
           grabCursor={false}
           centeredSlides={true}
@@ -229,67 +240,8 @@ const Page = () => {
             ))}
           </div>
           <div className="highlights">DESTAQUES</div>
-          <C.SportsSlider>
-            <Swiper
-              effect={"coverflow"}
-              grabCursor={false}
-              centeredSlides={false}
-              slidesPerView={5}
-              navigation={true}
-              coverflowEffect={{
-                rotate: 0,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: false,
-              }}
-              pagination={true}
-              className="mySwiper"
-            >
-              {shighlightedSports.map((img, i) => {
-                return (
-                  <SwiperSlide key={i}>
-                    <Link to={img.link} className="sport-link">
-                      <img
-                        src={img.img}
-                        alt=""
-                        width="20"
-                        height="20"
-                        style={{ marginRight: 10 }}
-                      />{" "}
-                      <span>{img.title}</span>
-                    </Link>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </C.SportsSlider>
-
-          <div className="details-area">
-            <div className="top">
-              <span>3 WAY</span>
-              <select>
-                <option>MAIS/MENOS</option>
-                <option>Indefinido</option>
-                <option>Indefindo</option>
-              </select>
-            </div>
-            <div className="bottom">
-              <div className="time-and-event">
-                <span>TEMPO</span>
-                <span>EVENTO</span>
-              </div>
-              <div className="specials">
-                <span className="special-span">1</span>
-                <span className="special-span">X</span>
-                <span className="special-span">2</span>
-                <span className="special-span">GOLOS</span>
-                <span className="special-span">ACIMA</span>
-                <span className="special-span">UNDER</span>
-                <span className="special-span">MAIS</span>
-              </div>
-            </div>
-          </div>
+          <SportSlider shighlightedSports={shighlightedSports} />
+          <GamesHeader />
           <div>
             <GameChunk />
             <GameChunk bgColor={"#f8f8f8"} />
@@ -301,6 +253,28 @@ const Page = () => {
             <GameChunk bgColor={"#f8f8f8"} />
             <GameChunk />
             <GameChunk bgColor={"#f8f8f8"} />
+          </div>
+
+          <div className="highlights">AO VIVO AGORA</div>
+          <SportSlider shighlightedSports={shighlightedSports} />
+          <GamesHeader />
+          <div>
+            <GameChunk />
+            <GameChunk bgColor={"#f8f8f8"} />
+            <GameChunk />
+            <GameChunk bgColor={"#f8f8f8"} />
+            <GameChunk />
+          </div>
+
+          <div className="highlights">PRÓXIMO</div>
+          <SportSlider shighlightedSports={shighlightedSports} />
+          <GamesHeader />
+          <div>
+            <GameChunk />
+            <GameChunk bgColor={"#f8f8f8"} />
+            <GameChunk />
+            <GameChunk bgColor={"#f8f8f8"} />
+            <GameChunk />
           </div>
         </C.MainContent>
         <C.RightSideContent>

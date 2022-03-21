@@ -5,6 +5,11 @@ export const GameArea = styled.div`
     background-color: #fff;
     border-top: 1px solid #dfdfdf;
     border-bottom: 1px solid #dfdfdf;
+    cursor: pointer;
+    transition: all ease-in 0.2s;
+    &: hover {
+        background-color: #F1F1F1 !important;
+    }
     .left {
         display: flex;
         flex-direction: column;
@@ -57,6 +62,11 @@ export const GameArea = styled.div`
             border: 2px solid #b9b9b9;
             margin-right: 7px;
             cursor: pointer;
+            transition: all ease-in 0.2s;
+            &: hover {
+                background-color: #009A44;
+                color: #fff;
+            }
         }
         flex: 1;
     }
